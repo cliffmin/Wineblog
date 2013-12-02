@@ -1,0 +1,17 @@
+<h1>Welcome to the Wine Blog</h1>
+
+<br>
+
+<% @posts.each do |post| %>
+<p>
+  <h2><%= link_to post.title, post %></h2>
+</p>
+<p>
+  <%= truncate post.text %>
+</p>
+<p><%= time_ago_in_words post.created_at %> ago </p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
