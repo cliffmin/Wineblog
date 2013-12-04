@@ -7,11 +7,14 @@
   <h2><%= link_to post.title, post %></h2>
 </p>
 <p>
-  <%= truncate post.text %>
+  <%= simple_format post.text %>
 </p>
 <p><%= time_ago_in_words post.created_at %> ago </p>
+<p>
+	<%= link_to "Edit", edit_post_path(post) %> |
+	<%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?"%>
+</p>
 <% end %>
-
 <br>
 
 <%= link_to 'New Post', new_post_path %>
