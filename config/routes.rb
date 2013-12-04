@@ -1,5 +1,5 @@
 WineBlog::Application.routes.draw do
-  
+  root "posts#index" 
   get "comments/create"
   get "comments/destroy"
 
