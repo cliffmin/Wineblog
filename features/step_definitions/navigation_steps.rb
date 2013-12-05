@@ -4,3 +4,6 @@ Given /^I am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 	
+When /^I click on the (.+) link$/ do |link_name|
+  pending
+end

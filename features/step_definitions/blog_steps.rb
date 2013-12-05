@@ -5,8 +5,10 @@ Given(/^that I am on the (.+)$/)	 do |page_string|
 end
 
 Then(/^I should see the articles in descending order$/) do
-
-	myPosts = page.all('div#posts').first
-	breakpoint
-	puts "www"
+   post1 = Post.create!
+   post2 = Post.create!
+   post3 = Post.create!
+   visit '/posts'
+   result = page.body
+   result.should match(/post.*3.*post.*2.*post.*1/)
 end
