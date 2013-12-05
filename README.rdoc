@@ -1,6 +1,7 @@
 == Helpful Documents
 
 - [capybara api cheatsheet](https://gist.github.com/zhengjia/428105) 
+- [rails routing guide](http://ruby.about.com/od/rails3tutorial/ss/Router-Basics.htm)
 
 == README
 
