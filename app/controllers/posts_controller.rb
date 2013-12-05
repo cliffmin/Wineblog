@@ -72,6 +72,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :text)
     end
 
-    before_action :set_post, only: [:show, :edit, :update, :destroy]
-    http_basic_authenticate_with name: "admin", password: "12345", except: [:index, :show]
 end

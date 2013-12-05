@@ -19,7 +19,11 @@ group :development, :test do
     gem "rspec-rails", ">= 2.0.1"
     gem 'cucumber-rails'
     gem 'database_cleaner'
+    gem 'better_errors'
+    gem 'binding_of_caller'
 end
+
+gem 'protected_attributes'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
