@@ -5,5 +5,8 @@ Given(/^that I am on the (.+)$/)	 do |page_string|
 end
 
 Then(/^I should see the articles in descending order$/) do
-  pending # express the regexp above with the code you wish you had
+
+	myPosts = page.all('div#posts').first
+	breakpoint
+	puts "www"
 end

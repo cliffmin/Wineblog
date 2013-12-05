@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :development, :test do
     gem "rspec-rails", ">= 2.0.1"
-    gem 'cucumber-rails'
+    gem 'cucumber-rails', :require => false
     gem 'database_cleaner'
     gem 'better_errors'
     gem 'binding_of_caller'
