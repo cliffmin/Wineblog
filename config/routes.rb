@@ -1,5 +1,8 @@
 WineBlog::Application.routes.draw do
 
+  resources :posts do
+    resources :comments
+  end
   
   get ':controller(/:action(/:id))(.:format)'
   root 'posts#index'
@@ -14,16 +17,14 @@ WineBlog::Application.routes.draw do
 
   #get ':controller(/:action(/:id))(.:format)'
   #get "users/new"
-  #oot "posts#index" 
+  #root "posts#index" 
   #get "comments/create"
   #get "comments/destroy"
   #get "signup", :to => "users#new"
   #get "login", :to => "sessions#login"
   #post "login", :to => "sessions#login"
 
-  resources :posts do
-    resources :comments
-  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

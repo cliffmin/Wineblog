@@ -23,7 +23,11 @@ group :development, :test do
     gem 'binding_of_caller'
 end
 
+# Re-enables deprecated attra_accessible
 gem 'protected_attributes'
+
+# Password encryption
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
