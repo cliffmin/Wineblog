@@ -36,7 +36,8 @@ class SessionsController < ApplicationController
 
 	def logout
 		session[:user_id] = nil
-		redirect_to :action => 'login'
+		flash[:notice] = "Logout successful."
+		redirect_to :root
 	end
 
 end
