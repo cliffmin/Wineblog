@@ -1,9 +1,11 @@
-Feature: admin article privileges 
+Feature: article creation         
 As an administrator of the blog
 So that I may create content
-I would like to create/edit/delete article posts
+I would like to create article posts
 
-Scenario: create/edit/deleting an article
-Given that I am an admin
-When I am on the frontpage
-Then I should be able to create/delete/edit an article of my selection
+Scenario: creation of a new article 
+Given that I am on the home page
+When I click on new post
+Then I should directed to a new post screen 
+And when I submit it
+Then I should be able to see it on the front page
