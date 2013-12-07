@@ -14,7 +14,7 @@ Then /^I should see the (.+) page/ do |page_name|
 	page.should have_content header
 end
 
-And /^I should see the fields: (.*)/ do |form_fields|
+Then /^I should see the fields: (.*)/ do |form_fields|
 	form_fields.split(%r{,\s*}).each do |field|
 		begin
 			found = find_field(field)
