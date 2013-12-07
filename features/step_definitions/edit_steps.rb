@@ -15,7 +15,6 @@ Then(/^I should see it removed from the front page$/) do
 end
 
 When(/^I click on edit of a particular article$/) do
-	save_and_open_page
 	click_on('edit 2')
 end
 
