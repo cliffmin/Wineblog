@@ -4,8 +4,8 @@ end
 
 
 
-When /^(?:|I )press "([^"]*)"$/ do |button|
-  click_link button
+When(/^I press (.*?)$/) do |arg1|
+	click_on arg1
 end
 
 

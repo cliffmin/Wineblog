@@ -1,11 +1,19 @@
-Given(/^that I am on the frontpage$/) do
-    pending # express the regexp above with the code you wish you had
+#instantiate our database for all tests
+Before do |scenario|
+	Rails.logger.debug "Starting scenario: #{scenario.title}"
+	Post.create!(:title => 'post1')
+	Post.create!(:title => 'post2')
+	Post.create!(:title => 'post3')
+	visit('/')
 end
 
-When(/^I view the articles$/) do
-    pending # express the regexp above with the code you wish you had
+Given(/^that I am on the (.+)$/)         do |page_string|
+	page_string.split(' ').at(0) do |page_name|
+		path_to(page_name)        
+	end
 end
 
-Then(/^I should see them in descending order$/) do
-    pending # express the regexp above with the code you wish you had
+Then(/^I should see the articles in descending order$/) do
+	result = page.body
+	result.should match(/post.*3.*post.*2.*post.*1/)
 end

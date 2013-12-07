@@ -21,6 +21,7 @@ group :development, :test do
     gem 'database_cleaner'
     gem 'better_errors'
     gem 'binding_of_caller'
+    gem 'launchy'
 end
 
 # Re-enables deprecated attra_accessible

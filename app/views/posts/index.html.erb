@@ -14,8 +14,10 @@
 </p>
 <p><%= time_ago_in_words post.created_at %> ago </p>
 <p>
-	<%= link_to "Edit", edit_post_path(post) %> |
-	<%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?"%>
+	<% delete_num = "delete #{post.id}" %>
+	<% edit_num = "edit #{post.id}" %>
+	<%= link_to "Edit", edit_post_path(post), :id => edit_num %> |
+	<%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%>
 </p>
 <% end %>
 <br>
