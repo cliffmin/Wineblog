@@ -4,8 +4,8 @@ So that I may create content
 I would like to create article posts
 
 Scenario: creation of a new article 
-Given that I am on the home page
-When I click on New Post
-Then I should be able to create a article
-And click update post 
+Given I am on the home page
+When I click New Post
+Then I should be able to create an article
+And click Create Post
 Then I should be able to see it on the front page

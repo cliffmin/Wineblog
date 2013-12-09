@@ -16,7 +16,7 @@ end
 #   click_button(button)
 # end
 
-When /^(?:|I )(?:press) "?([^"]*)"?$/ do |name|
+When /^(?:|I )(?:press|click) "?([^"]*)"?$/ do |name|
 click_on(name)
 end
 
