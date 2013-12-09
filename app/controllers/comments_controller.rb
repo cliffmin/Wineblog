@@ -3,8 +3,6 @@ class CommentsController < ApplicationController
   	#will look up the matching params variable
   	@post = Post.find(params[:post_id])
   	@comment = @post.comments.create!(comment_params)
-    breakpoint
-
   	redirect_to @post
   end
   #need this for new rails security concerns. This will only allow these vars
