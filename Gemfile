@@ -29,6 +29,9 @@ gem 'protected_attributes'
 # Password encryption
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
+# User Restrictions
+gem 'cancan'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
