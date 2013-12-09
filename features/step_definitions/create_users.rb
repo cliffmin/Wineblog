@@ -1,12 +1,7 @@
-Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
-end
+# Given /^(?:|I )am on (.+)$/ do |page_name|
+#   visit path_to(page_name)
+# end
 
-
-
-When(/^I press (.*?)$/) do |arg1|
-	click_on arg1
-end
 
 
 Then /^I should see the (.+) page/ do |page_name|

@@ -9,7 +9,7 @@ Feature: Create User Accounts
 Scenario: follow signup link
 	Given I am on the home page
 
-	When I press Sign Up
+	When I press "Sign Up"
 
 	Then I should see the signup page
 
