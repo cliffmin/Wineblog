@@ -10,7 +10,7 @@ Then I should see it removed from the front page
 
 Scenario: edit an article
 Given I am on the front page 
-When I click on edit of a particular article 
+When I click on edit of the first article 
 Then I should be able to edit that article
 Then click update
 And see it updated on the front page

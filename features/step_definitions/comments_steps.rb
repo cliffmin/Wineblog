@@ -1,12 +1,15 @@
 
 Given(/^that I am looking at an article$/) do
-  pending # express the regexp above with the code you wish you had
+	visit('/') 
+	click_on('post 3')
 end
 
 When(/^I submit a comment about the article$/) do
-  pending # express the regexp above with the code you wish you had
+	page.fill_in 'comment[text]', :with => 'this is my comment'
+	save_and_open_page
+	click_on 'Post Comment'
 end
 
-Then(/^I should be able to see comments below that are in chronological order$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should be able to see my comment$/) do
+	page.body.should match('this is my comment')
 end

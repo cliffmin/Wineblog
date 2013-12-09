@@ -9,22 +9,31 @@ Before do |scenario|
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
-  visit path_to(page_name)
-  save_and_open_page
+	visit path_to(page_name)
 end
 
-# When /^(?:|I )(?:press\s|click\s)(?:on\s)?"([^"]*)"$/ do |button|
-#   click_button(button.gsub!(/"/, ' '))
+# When /^(?:|I )(?:press\s|click\s)(.*)$/ do |button|
+#   click_button(button)
 # end
 
-When /^(?:|I )(?:press|click) "?([^"]*)"?$/ do |button|
-  click_button(button)
+When /^(?:|I )(?:press) "?([^"]*)"?$/ do |name|
+click_on(name)
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  click_link(link)
+click_link(link)
 end
 
-# When(/^I (?:press\s|click\s)(?:on\s)?(\S*)$/) do |button_name|
-# 	click_on(button_name)
-# end
+Then /^I should see the (.+) page/ do |page_name|
+	header = page_name.capitalize
+	page.should have_content header
+end
+
+Then /^I should see the fields: (.*)/ do |form_fields|
+        form_fields.split(%r{,\s*}).each do |field|
+                begin
+                        found = find_field(field)
+                rescue Capybara::ElementNotFound
+                end
+        end
+end
