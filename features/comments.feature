@@ -7,4 +7,4 @@ Scenario:
 Given that I am looking at an article
 When I submit a comment about the article
 Then I should be able to see my comment
-And they should be in descending order 
+And the comments should be in descending order 
