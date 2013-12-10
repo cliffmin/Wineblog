@@ -3,7 +3,7 @@ WineBlog::Application.routes.draw do
   resources :posts do
     resources :comments
   end
-  
+
   get ':controller(/:action(/:id))(.:format)'
   root 'posts#index'
   get "signup", :to => "users#new"

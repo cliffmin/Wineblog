@@ -5,7 +5,7 @@ I would like to create article posts
 
 Scenario: creation of a new article 
 Given I am on the home page
-When I click New Post
+When I press New Post
 Then I should be able to create an article
-And click Create Post
+And press Create Post
 Then I should be able to see it on the front page

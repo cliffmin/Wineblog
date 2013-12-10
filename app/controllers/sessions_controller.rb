@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 	end
 
 	def profile
-		#Profile Page
+		
 	end
 
 	def setting
