@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 	end
 
 	def profile
-		
+		@profile = User.find(session[:user_id])			
 	end
 
 	def setting

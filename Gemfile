@@ -15,10 +15,13 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+gem 'bootstrap-sass'
+
 group :development, :test do
+    gem 'rails_layout'
     gem 'turn'
     gem 'guard-rspec'
-    gem 'growl'
+    gem 'growl_notify'
     gem 'rspec-rails'
     gem 'cucumber-rails', :require => false
     gem 'database_cleaner'

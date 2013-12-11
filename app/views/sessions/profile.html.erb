@@ -1,1 +1,13 @@
-<h2 class='User_Header'><%=@current_user.username%> Profile <h2>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2 class='User_Header'>
+			Profile: <%=@current_user.username%>
+		</h2>
+		<div>
+			Email: <%= @profile.email %>
+		</div>
+	</body>
+</html>
