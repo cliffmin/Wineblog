@@ -17,16 +17,17 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass'
 
-group :development, :test do
+group :development do
+    gem 'better_errors'
+    gem 'binding_of_caller'
     gem 'rails_layout'
-    gem 'turn'
+end
+group :test do
     gem 'guard-rspec'
-    gem 'growl_notify'
+    gem 'growl'
     gem 'rspec-rails'
     gem 'cucumber-rails', :require => false
     gem 'database_cleaner'
-    gem 'better_errors'
-    gem 'binding_of_caller'
     gem 'launchy'
 end
 

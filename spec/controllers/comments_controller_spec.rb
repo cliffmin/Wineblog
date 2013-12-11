@@ -1,5 +1,6 @@
 require 'spec_helper'
+require 'comments'
 
 describe CommentsController do
-	it "should `"
+	pending
 end
