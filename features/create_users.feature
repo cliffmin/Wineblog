@@ -6,11 +6,11 @@ Feature: Create User Accounts
 
 	
 
-Scenario: follow signup link
+Scenario: New user creation 
 	Given I am on the home page
 
 	When I press Sign Up
 
-	Then I should see the signup page
+	Then I should see the Sign Up page
 
 	Then I should see the fields: Username, Email, Password, Password Confirmation

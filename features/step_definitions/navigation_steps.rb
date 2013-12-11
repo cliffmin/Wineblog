@@ -25,7 +25,7 @@ click_link(link)
 end
 
 Then /^I should see the (.+) page/ do |page_name|
-	header = page_name.capitalize
+	header = page_name
 	page.should have_content header
 end
 
