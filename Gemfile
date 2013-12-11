@@ -16,7 +16,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 group :development, :test do
-    gem "rspec-rails", ">= 2.0.1"
+    gem 'turn'
+    gem 'guard-rspec'
+    gem 'growl'
+    gem 'rspec-rails'
     gem 'cucumber-rails', :require => false
     gem 'database_cleaner'
     gem 'better_errors'

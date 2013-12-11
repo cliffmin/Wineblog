@@ -1,13 +1,13 @@
 <h1>Welcome to the Wine Blog</h1>
 
 <%= if session[:user_id] 
-	link_to "Profile", :profile
+	link_to "Profile", :profile#maps to session#profile
 	else
-	link_to "Login", :login 
+	link_to "Login", :login #maps to session#login
 	end %>
 	<%= link_to "Logout", :logout %>
 	<%= if !session[:user_id] 
-		link_to "Sign Up", :signup 
+		link_to "Sign Up", :signup #maps to users#create
 		end%>
 	<br>
 	<% @posts.each do |post| %>
