@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.all(:order => 'created_at DESC')
   end
 
+  def current_user
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show

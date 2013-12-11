@@ -14,7 +14,7 @@
 </p>
 <p><%= time_ago_in_words post.created_at %> ago </p>
 
-<% if can? :destroy, :post %>
+<% if can? [:destroy, :update], :post %>
 	<%= link_to "Edit", edit_post_path(post) %> |
 	<%= link_to "Delete", post, :method => :delete, :confirm => "Are you sure?"%>
 <% end %>
@@ -22,4 +22,6 @@
 <% end %>
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<% if can? :create, :post %>
+	<%= link_to 'New Post', new_post_path %>
+<% end %>
