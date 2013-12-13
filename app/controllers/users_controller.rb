@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save
+      session[:user_id] = @user.id
   		flash[:notice] = "Sign up successful!"
   		flash[:color] = "valid"
-  		redirect_to :root
+  		redirect_to :tutorial
   	else
   		flash[:notice] = "Form invalid!"
   		flash[:color] = "invalid"

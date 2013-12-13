@@ -24,6 +24,7 @@ group :development do
 end
 group :test do
     gem 'guard-rspec'
+    gem 'guard-cucumber'
     gem 'growl'
     gem 'rspec-rails'
     gem 'cucumber-rails', :require => false

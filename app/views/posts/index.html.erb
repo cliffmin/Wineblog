@@ -1,33 +1,33 @@
-<h1>Welcome to the Wine Blog</h1>
-
-<%= if session[:user_id] 
-	link_to "Profile", :profile#maps to session#profile
-	else
-	link_to "Login", :login #maps to session#login
-	end %>
-	<%= link_to "Logout", :logout %>
-	<%= if !session[:user_id] 
-		link_to "Sign Up", :signup #maps to users#create
-		end%>
-	<br>
-	<% @posts.each do |post| %>
-
-	<% post_num = "post #{post.id}" %>
-	<% delete_num = "delete #{post.id}" %>
-	<% edit_num = "edit #{post.id}" %>
-
-	<p>
-		<h2><%= link_to post.title, post, :id => post_num %></h2>
-	</p>
-	<p>
-		<%= simple_format post.text %>
-	</p>
-	<p><%= time_ago_in_words post.created_at %> ago </p>
-	<p>
-		<%= link_to "Edit", edit_post_path(post), :id => edit_num %> |
-		<%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%>
-	</p>
-	<% end %>
-	<br>
-
-	<%= link_to 'New Post', new_post_path %>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			Welcome to the Wine Blog
+		</h1><%= if session[:user_id] 
+				link_to "Profile", :home 
+			
+				else
+					link_to "Login", :login 
+					end %> |
+				<%= link_to "Logout", :logout %> |
+				<%= if !session[:user_id] 
+						link_to "Sign Up", :signup #maps to users#create
+						end%><br>
+		<% @posts.each do |post| %> <% post_num = "post #{post.id}" %> <% delete_num = "delete #{post.id}" %> <% edit_num = "edit #{post.id}" %>
+		<h2>
+			<%= link_to post.title, post, :id => post_num %>
+		</h2>
+		<p>
+			<%= simple_format post.text %>
+		</p>
+		<p>
+			<%= time_ago_in_words post.created_at %> ago
+		</p>
+		<p>
+			<%= link_to "Edit", edit_post_path(post), :id => edit_num %> | <%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%>
+		</p><% end %><br>
+		<%= link_to 'New Post', new_post_path %>
+	</body>
+</html>
