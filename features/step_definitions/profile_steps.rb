@@ -20,3 +20,13 @@ Then(/^I should see my profile page$/) do
 end
 
 
+Then(/^I should be able to input my own information$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^see it updated on my profile page$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+
+

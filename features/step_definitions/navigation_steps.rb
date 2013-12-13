@@ -6,7 +6,8 @@ Before do |scenario|
 	Post.create!(:title => 'post1', :text => "post 1 text")
 	Post.create!(:title => 'post2', :text => "post 2 text")
 	Post.create!(:title => 'post3', :text => "post 3 text")
-end
+	User.create!(:username => 'testuser', :email => 'testuser@test.com', :password => 'testpass') 
+	end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
 	visit path_to(page_name)

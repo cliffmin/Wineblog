@@ -14,6 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the (wine blog )?(home\s?|front\s?)page$/ then root_path 
+    when /profile/ then  home_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
