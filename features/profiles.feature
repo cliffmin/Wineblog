@@ -12,16 +12,18 @@ Then I should see my profile page
 
 Scenario: User log in 
 Given I am on the front page
-When I press login 
-Then I should see the log in page
-When I press submit
-Then I should see my profile page 
+When I press Login 
+Then I should see the Log in page
+And put in my log in information
+When I press Log In 
+Then I should see the Profile page 
 
 Scenario: Inputting user information 
 
-Given I am on the front page
-When I press profile
-Then I should see my profile page
-When I press information
+Given I am already logged in 
+And I am at the front page
+Then I press Profile
+Then I should see the Profile page
+When I press My Information
 Then I should be able to input my own information
 And see it updated on my profile page

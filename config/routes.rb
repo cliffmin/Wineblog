@@ -15,6 +15,7 @@ WineBlog::Application.routes.draw do
   get "profile", :to => "profiles#information"
   get "setting", :to => "sessions#setting"
   get "tutorial", :to => "profiles#tutorial"
+  patch "profileUpdate", :to => "profiles#update"
   
 
   #get ':controller(/:action(/:id))(.:format)'

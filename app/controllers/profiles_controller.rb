@@ -1,11 +1,25 @@
 class ProfilesController < ApplicationController
 	def information 
-		@current_user_profile = Profile.find(session[:user_id])			
+		@profile = Profile.find(session[:user_id]) 	
 	end
 	def tutorial
-		@myuser = User.find(session[:user_id])			
+		@profile = Profile.find(session[:user_id])			
 	end
 	def home
-		@current_user = User.find(session[:user_id])			
+		@profile = Profile.find(session[:user_id])			
 	end
+	def update 
+		@profile = Profile.find(session[:user_id])			
+		@profile.update_attributes(params[:profile])
+		if @profile.save
+			flash[:notice] = "Update successful!"
+			redirect_to	:profile
+		else
+			flash[:notice] = "Form invalid!"
+			render "new"
+		end
+
+	end
+
+
 end

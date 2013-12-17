@@ -19,6 +19,25 @@ Then(/^I should see my profile page$/) do
 	expect(page.body).to match(/John smith's/)
 end
 
+Then(/^put in my log in information$/) do
+	fill_in "username_or_email", :with => "testuser"
+	fill_in "login_password", :with => "testpass"
+end
+
+Given(/^I am already logged in$/) do
+	visit('/')	
+	click_on 'Login' 
+	fill_in "username_or_email", :with => "testuser"
+	fill_in "login_password", :with => "testpass"
+	click_on 'Log In' 
+end
+
+Given(/^I am at the front page$/) do
+	visit('/')
+	page.body.should have_content ('Wine Blog')
+end
+
+
 
 Then(/^I should be able to input my own information$/) do
   pending # express the regexp above with the code you wish you had

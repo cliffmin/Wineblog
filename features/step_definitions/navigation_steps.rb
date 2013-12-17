@@ -6,7 +6,8 @@ Before do |scenario|
 	Post.create!(:title => 'post1', :text => "post 1 text")
 	Post.create!(:title => 'post2', :text => "post 2 text")
 	Post.create!(:title => 'post3', :text => "post 3 text")
-	User.create!(:username => 'testuser', :email => 'testuser@test.com', :password => 'testpass') 
+	@testuser = User.create!(:username => 'testuser', :email => 'testuser@test.com', :password => 'testpass') 
+	Profile.create!(:id => @testuser.id, :user_id => @testuser.id)	
 	end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|

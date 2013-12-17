@@ -10,12 +10,13 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
       session[:user_id] = @user.id
+      @user.profile_id = @user.id
+      @profile = Profile.create!(:user_id => @user.id, :username => @user.username, :id => @user.id)
+      @user.profile_id = @profile.id
   		flash[:notice] = "Sign up successful!"
-  		flash[:color] = "valid"
   		redirect_to :tutorial
   	else
   		flash[:notice] = "Form invalid!"
-  		flash[:color] = "invalid"
   		render "new"
   	end
   	

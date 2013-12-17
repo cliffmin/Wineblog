@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 		if authorized_user
 			session[:user_id] = authorized_user.id
 			flash[:notice] = "Welcome back, #{authorized_user.username}"
-			redirect_to(:action => 'home')
+			redirect_to(home_path)#profile#home
 
 
 		else
