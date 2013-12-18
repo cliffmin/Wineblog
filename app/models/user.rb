@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessor :password
-
+  	attr_accessor :password
 
   	before_save :encrypt_password
   	after_save :clear_password
@@ -43,5 +42,6 @@ class User < ActiveRecord::Base
   	def clear_password
    	 	self.password = nil
   	end
+
 
 end

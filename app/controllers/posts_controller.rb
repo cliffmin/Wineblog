@@ -7,17 +7,21 @@ class PostsController < ApplicationController
     @posts = Post.all(:order => 'created_at DESC')
   end
 
-  def current_user
-  end
   # GET /posts/1
   # GET /posts/1.json
   def show
     render 'show' 
   end
 
+  def current_user
+    session[:user]
+  end
+  
   # GET /posts/new
   def new
-    @post = Post.new
+    if can? :create, :post
+      @post = Post.new
+    end
   end
 
   # GET /posts/1/edit
@@ -27,15 +31,17 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    if can? :create, :post
+      @post = Post.new(post_params)
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @post }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to @post, notice: 'Post was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @post }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

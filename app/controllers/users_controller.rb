@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_filter :save_login_state, :only => [:new, :create]
 
   def new
@@ -17,7 +16,13 @@ class UsersController < ApplicationController
   		flash[:color] = "invalid"
   		render "new"
   	end
-  	
   end
 
+  def current_user
+    session[:user]
+  end
+
+  def admin?
+    admin
+  end
 end
