@@ -67,3 +67,4 @@ group :doc do
 
 # Use debugger
  gem 'debugger', group: [:development, :test]
+ gem '2.0.0'
