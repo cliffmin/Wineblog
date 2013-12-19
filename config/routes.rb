@@ -4,6 +4,7 @@ WineBlog::Application.routes.draw do
     resources :comments
   end
 
+
   get ':controller(/:action(/:id))(.:format)'
   root 'posts#index'
   get "signup", :to => "users#new"
@@ -17,7 +18,6 @@ WineBlog::Application.routes.draw do
   get "tutorial", :to => "profiles#tutorial"
   patch "profileUpdate", :to => "profiles#update"
   
-
   #get ':controller(/:action(/:id))(.:format)'
   #get "users/new"
   #root "posts#index" 

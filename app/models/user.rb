@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-	attr_accessible :id, :profile_id, :username
+	attr_accessible :id, :profile_id 
   has_one :profile
 
 
