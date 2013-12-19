@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -16,21 +14,24 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass'
+group :production do
+gem 'pg'
+end
 
 group :development do
     gem 'better_errors'
-    gem 'binding_of_caller'
-    gem 'rails_layout'
-end
-group :test do
-    gem 'guard-rspec'
-    gem 'guard-cucumber'
-    gem 'growl'
-    gem 'rspec-rails'
-    gem 'cucumber-rails', :require => false
-    gem 'database_cleaner'
-    gem 'launchy'
-end
+        gem 'binding_of_caller'
+            gem 'rails_layout'
+            end
+            group :test do
+                gem 'guard-rspec'
+                    gem 'guard-cucumber'
+                        gem 'growl'
+                            gem 'rspec-rails'
+                                gem 'cucumber-rails', :require => false
+                                    gem 'database_cleaner'
+                                        gem 'launchy'
+                                        end
 
 # Re-enables deprecated attra_accessible
 gem 'protected_attributes'
@@ -52,8 +53,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+    gem 'sdoc', require: false
+    end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
