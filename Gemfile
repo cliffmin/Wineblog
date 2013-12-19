@@ -19,19 +19,19 @@ gem 'pg'
 end
 
 group :development do
-    gem 'better_errors'
-        gem 'binding_of_caller'
-            gem 'rails_layout'
-            end
-            group :test do
-                gem 'guard-rspec'
-                    gem 'guard-cucumber'
-                        gem 'growl'
-                            gem 'rspec-rails'
-                                gem 'cucumber-rails', :require => false
-                                    gem 'database_cleaner'
-                                        gem 'launchy'
-                                        end
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'rails_layout'
+end
+group :test do
+gem 'guard-rspec'
+gem 'guard-cucumber'
+gem 'growl'
+gem 'rspec-rails'
+gem 'cucumber-rails', :require => false
+gem 'database_cleaner'
+gem 'launchy'
+end
 
 # Re-enables deprecated attra_accessible
 gem 'protected_attributes'
@@ -67,4 +67,4 @@ group :doc do
 
 # Use debugger
  gem 'debugger', group: [:development, :test]
- gem '2.0.0'
+ gem 'sqlite3', group: [:development, :test]

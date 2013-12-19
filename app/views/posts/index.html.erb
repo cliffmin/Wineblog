@@ -19,7 +19,7 @@
 						<br>
 <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
+<%= submit_tag "Search Posts" %>
 <% end %>
 		<% @posts.each do |post| %> <% post_num = "post #{post.id}" %> <% delete_num = "delete #{post.id}" %> <% edit_num = "edit #{post.id}" %>
 		<h2>
