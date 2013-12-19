@@ -1,7 +1,10 @@
 <h1>Editing post</h1>
-
 this page should be able to tag certain wines from the database, maybe
 from a dropdown menu
+<div class="field">
+  <%= label :tag_list, "Tags (separated by commas)" %><br />
+  <%= text_field :tag_list %>
+</div>
 
 <%= render 'form' %>
 
@@ -9,8 +12,5 @@ from a dropdown menu
 <%= link_to 'Back', posts_path %>
 
 
-<br>
-<br>
-<p style="color: blue"><%= params %></p>	
 
 

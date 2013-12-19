@@ -33,11 +33,11 @@
 		</p>
 		<p>
 			<%= link_to "Edit", edit_post_path(post), :id => edit_num %> | <%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%>
-		</p><% end %><br>
+			<br>
+			<br>
+		<% end %>
+		<br>
 		<%= link_to 'New Post', new_post_path %>
-		<br>
-		<br>
-<p style="color: blue"><%= params %></p>	
 </body>
 </html>
 
