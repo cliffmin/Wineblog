@@ -18,8 +18,8 @@
 		Phone:<%= @profile.phone %><br>
 		Email:<%= @profile.email %><br>
 		Website:<%= @profile.website %><br>
-		Description:<%= @profile.description %><br>
-		Created_at:<%= @profile.created_at %><br>
+		Description:<%= @profile.description %><br><br>
+		Joined <%= time_ago_in_words @profile.created_at %> ago<br> 
 	</div>
 	<div>
 		<h1>
