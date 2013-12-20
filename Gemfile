@@ -56,7 +56,7 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
     gem 'sdoc', require: false
     end
-
+gem 'acts-as-taggable-on'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -69,3 +69,4 @@ group :doc do
 # Use debugger
  gem 'debugger', group: [:development, :test]
  gem 'sqlite3', group: [:development, :test]
+ruby "2.0.0"
