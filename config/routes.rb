@@ -4,6 +4,7 @@ WineBlog::Application.routes.draw do
     resources :comments
   end
 
+get 'tags/:tag', to: 'posts#index', as: :tag
 
   get ':controller(/:action(/:id))(.:format)'
   root 'posts#index'
