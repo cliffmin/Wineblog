@@ -1,6 +1,10 @@
 <h1><%= @post.title %></h1>
 
+<em>Tags: <%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em>
+<br>
+<br>
 <%= @post.text %>
+
 
 <h2>Comments</h2>
 

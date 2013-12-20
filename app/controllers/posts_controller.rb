@@ -4,12 +4,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
 def index
-if params[:search]
-@posts = Post.search(params[:search]).order("created_at DESC")
-else
-
-@posts = Post.all.order('created_at DESC')
-end
+  if params[:search]
+    @posts = Post.search(params[:search]).order("created_at DESC")
+  elsif params[:tag]
+    @posts = Post.tagged_with(params[:tag])
+  else
+    @posts = Post.all.order('created_at DESC')
+  end
 end
   # GET /posts/1
   # GET /posts/1.json
@@ -24,6 +25,7 @@ end
 
   # GET /posts/1/edit
   def edit
+    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -74,7 +76,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text)
+      params.require(:post).permit(:title, :text, :tag_list)
     end
 
   end
