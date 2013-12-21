@@ -39,6 +39,15 @@
 		<% end %>
 		<br>
 		<%= link_to 'New Post', new_post_path %>
+	<br>	
+	<br>	
+	<br>	
+	<h3 style="color: blue">Tag Cloud</h3>
+	<div id="tag_cloud">
+		<% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
+		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+		<% end %>
+	</div>	
 </body>
 </html>
 
