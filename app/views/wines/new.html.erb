@@ -1,0 +1,16 @@
+<h1>Enter a new wine!</h1>
+
+ <%= form_for(:wines, :url => {:controller => :wines, :action => :create}) do |f| %>
+
+ <p>          
+ 	Name:</br> <%= f.text_field :name%>
+ </p>
+Description:
+ <p>
+ 	<%= f.text_area :description, :size => '40x5'%>
+ </p>
+ 	
+
+
+    <%= f.submit %>
+  <% end %>

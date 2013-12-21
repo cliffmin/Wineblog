@@ -1,0 +1,12 @@
+<% @winelist.each do |f| %>
+<div>
+<br>
+<h3><%= f.name %></h3>
+" <%= f.description %> "
+</div>
+<br>
+<br>
+
+<% end %>
+
+<%= link_to "make another", wines_new_path%>

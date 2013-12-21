@@ -1,53 +1,46 @@
 <html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<h1>
-			Welcome to the Wine Blog
-		</h1><%= if session[:user_id] 
-				link_to "Profile", :home 
-			
-				else
-					link_to "Login", :login 
-					end %> |
-				<%= link_to "Logout", :logout %> |
-				<%= if !session[:user_id] 
-						link_to "Sign Up", :signup #maps to users#create
-						end%>
-						<br>
-						<br>
-<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search Posts" %>
-<% end %>
-		<% @posts.each do |post| %> <% post_num = "post #{post.id}" %> <% delete_num = "delete #{post.id}" %> <% edit_num = "edit #{post.id}" %>
-		<h2>
-			<%= link_to post.title, post, :id => post_num %>
-		</h2>
-		<em>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em>		
-		<p>
-			<%= simple_format post.text %>
-		</p>
-		<p>
-			<%= time_ago_in_words post.created_at %> ago
-		</p>
-		<p>
-			<%= link_to "Edit", edit_post_path(post), :id => edit_num %> | <%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%>
-			<br>
-			<br>
-		<% end %>
-		<br>
-		<%= link_to 'New Post', new_post_path %>
-	<br>	
-	<br>	
-	<br>	
-	<h3 style="color: blue">Tag Cloud</h3>
-	<div id="tag_cloud">
-		<% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %>
-		<%= link_to tag.name, tag_path(tag.name), class: css_class %>
-		<% end %>
-	</div>	
-</body>
-</html>
-
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>
+		Welcome to the Wine Blog
+	</h1>
+	<%= if session[:user_id] 
+		link_to "Profile", :home 
+	else
+		link_to "Login", :login 
+		end %>| <%= link_to "Logout", :logout %> | 
+		<%= if !session[:user_id] 
+				link_to "Sign Up", :signup #maps to users#create
+				end%>
+				<br>
+				<br>
+				<%= form_tag(posts_path, :method => "get", id: "search-form") do %> <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %> <%= submit_tag "Search Posts" %> <% end %> 
+				<% @posts.each do |post| %> <% post_num = "post #{post.id}" %> <% delete_num = "delete #{post.id}" %> <% edit_num = "edit #{post.id}" %>
+				<h2>
+					<%= link_to post.title, post, :id => post_num %>
+				</h2><em>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></em>
+				<p>
+					<%= simple_format post.text %>
+				</p>
+				<p>
+					<%= time_ago_in_words post.created_at %> ago
+				</p>
+				<p>
+					<%= link_to "Edit", edit_post_path(post), :id => edit_num %> | <%= link_to "Delete", post, :id => delete_num, :method => :delete, data:{confirm: "Are you sure?"}%><br>
+					<br>
+					<% end %><br>
+					<%= link_to 'New Post', new_post_path %> |
+					<%= link_to 'New Wine', wines_new_path%>
+					<br>
+					<br>
+				</p>
+				<h3 style="color: blue">
+					<em>Tag Cloud</em>		
+				</h3>
+				<div id="tag_cloud">
+					<% tag_cloud Post.tag_counts, %w[s m l] do |tag, css_class| %><%= link_to tag.name, tag_path(tag.name), class: css_class %><% end %>
+				</div>
+			</body>
+			</html>
