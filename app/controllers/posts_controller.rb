@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   end
   # GET /posts/1
   # GET /posts/1.json
+  # instance vars are just arrays, ex) @posts[0].id => 4, that's why the
+  # for each method works
   def show
     render 'show' 
   end

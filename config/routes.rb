@@ -1,11 +1,10 @@
 WineBlog::Application.routes.draw do
 
-  get "wines/new", :to => 'wines#new'
-  post "wines/create", :to => 'wines#create'
-  get 'wine/show', :to => 'wines#show'
+
   resources :posts do
     resources :comments
   end
+  resources :wines
 
   get 'tags/:tag', to: 'posts#index', as: :tag
 

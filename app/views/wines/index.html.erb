@@ -1,0 +1,17 @@
+<h1>Wine Catalog</h1>
+<br>
+<%= link_to "make another", new_wine_path%>
+
+<% @winelist.each do |wine| %>
+<div>
+<br>
+<h3><%= wine.name %></h3>
+" <%= wine.description %> "
+</div>
+<%= link_to "Edit", edit_wine_path(wine) %> | <%= link_to "Delete", wine, :method => :delete, data:{confirm: "Are you sure?"}%>
+<br>
+<% #the wine in the link_to gives the href a link to then give us params necessary to identify that particular object %>
+<br>
+
+<% end %>
+
