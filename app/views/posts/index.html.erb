@@ -7,7 +7,7 @@
 		Welcome to the Wine Blog
 	</h1>
 	<% if session[:user_id] %>
-	<%= link_to "Logout", :logout %> | 
+	<%= link_to "Logout", :logout %>  
 	<% end %>
 	<% if !session[:user_id] %>
 	<%= link_to "Login", :login %> |	

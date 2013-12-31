@@ -12,12 +12,16 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'rmagick'
+gem 'carrierwave'
+
 
 gem 'bootstrap-sass'
 group :production do
 gem 'pg'
 gem 'rails_12factor'
 end
+
 
 group :development do
 gem 'better_errors'

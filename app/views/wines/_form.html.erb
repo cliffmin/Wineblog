@@ -1,16 +1,4 @@
-<%= form_for(@wine) do |f| %>
-
-<% if @wine.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-  <ul>
-    <% @wine.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+<%= form_for(@wine, {:controller => :profiles, :action => :update, :method => :patch }) do |f| %>
 
 <div class="field">
   <%= f.label :name%><br>
@@ -23,6 +11,5 @@
 <div class="actions">
   <%= f.submit %>
 </div>
-<%= params %>
 <% end %>
 

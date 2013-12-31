@@ -7,10 +7,17 @@
 
 		Hi <%= @profile.username.capitalize %>!<br>
 
-		You last update was <%= time_ago_in_words @profile.updated_at %> ago
+		Your last update was <%= time_ago_in_words @profile.updated_at %> ago
 
 		<div>
-			<%= form_for(@profile, :url => {:controller => :profiles, :action => :update, :method => :post}) do |f| %>
+			<%= form_for(@profile, :url => {:controller => :profiles, :action => :update, :method => :post}, :html => {:multipart => true}) do |f| %>
+			<br>
+			<%= f.file_field :image %>
+			<br>
+			<%= f.label :remote_image_url %>
+			<%= f.text_field :remote_image_url %>
+			<br>
+
 			<%= f.label :first_name %>:
 			<%= f.text_field :first_name %><br />
 			<%= f.label :last_name %>:

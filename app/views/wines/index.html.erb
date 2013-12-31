@@ -6,7 +6,9 @@
 <div>
 <br>
 <h3><%= wine.name %></h3>
+<% if wine.description %>
 " <%= wine.description %> "
+<% end %>
 </div>
 <%= link_to "Edit", edit_wine_path(wine) %> | <%= link_to "Delete", wine, :method => :delete, data:{confirm: "Are you sure?"}%>
 <br>

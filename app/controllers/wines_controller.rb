@@ -11,7 +11,7 @@ class WinesController < ApplicationController
 				format.json { render action: 'show', status: :created, location: @wine }
 			else 
 				format.html { render action: 'new' }
-				format.json { render json: @wine.errors, status: :unprocessable_entity }
+				flash[:error] = @wine.errors.full_messages.to_sentence
 			end
 		end
 	end
@@ -25,10 +25,11 @@ class WinesController < ApplicationController
 		@wine.update_attributes(params[:wines])
 		if @wine.save
 			flash[:notice] = "Update successful!"
-			redirect_to	:wine
+			redirect_to wines_path 
 		else
 			flash[:notice] = "Form invalid!"
-			render "index"
+			flash[:error] = @wine.errors.full_messages.to_sentence
+			redirect_to @wine
 		end
 
 	end

@@ -8,6 +8,9 @@ class ProfilesController < ApplicationController
 	def home
 		@profile = Profile.find(session[:user_id])			
 	end
+	def new
+		@profile = Profile.new
+	end
 	def update 
 		@profile = Profile.find(session[:user_id])			
 		@profile.update_attributes(params[:profile])
@@ -16,7 +19,10 @@ class ProfilesController < ApplicationController
 			redirect_to	:profile
 		else
 			flash[:notice] = "Form invalid!"
-			render "new"
+			if @profile.errors.any?
+				flash[:error] = @profile.errors.full_messages.to_sentence
+			end
+			redirect_to @profile
 		end
 
 	end
