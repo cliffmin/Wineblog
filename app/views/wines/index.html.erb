@@ -5,9 +5,9 @@
 <% @winelist.each do |wine| %>
 <div>
 <br>
-<h3><%= wine.name %></h3>
+<h3><%= link_to wine.name, wine %></h3>
 <% if wine.description %>
-" <%= wine.description %> "
+<div id="wine_desc">" <%= wine.description %> "</div>
 <% end %>
 </div>
 <%= link_to "Edit", edit_wine_path(wine) %> | <%= link_to "Delete", wine, :method => :delete, data:{confirm: "Are you sure?"}%>

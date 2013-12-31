@@ -25,7 +25,7 @@ class WinesController < ApplicationController
 		@wine.update_attributes(params[:wines])
 		if @wine.save
 			flash[:notice] = "Update successful!"
-			redirect_to wines_path 
+			redirect_to @wine 
 		else
 			flash[:notice] = "Form invalid!"
 			flash[:error] = @wine.errors.full_messages.to_sentence
@@ -35,6 +35,7 @@ class WinesController < ApplicationController
 	end
 
 	def show
+		@wine = Wines.find(params[:id])	
 	end
 	def destroy
 		@wine = Wines.find(params[:id])

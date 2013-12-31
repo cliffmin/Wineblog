@@ -8,20 +8,20 @@
 		Hi <%= @profile.username.capitalize %>!<br>
 
 		Your last update was <%= time_ago_in_words @profile.updated_at %> ago
-
+		<br>
 		<div>
 			<%= form_for(@profile, :url => {:controller => :profiles, :action => :update, :method => :post}, :html => {:multipart => true}) do |f| %>
-			<br>
-			<%= f.file_field :image %>
-			<br>
-			<%= f.label :remote_image_url %>
+			<%= f.label :image, "Add your own image!" %>
+			<%= f.file_field :image %> 
+			<%= f.label :remote_image_url, "Or add a url!" %>
 			<%= f.text_field :remote_image_url %>
+			<br>
 			<br>
 
 			<%= f.label :first_name %>:
-			<%= f.text_field :first_name %><br />
+			<%= f.text_field :first_name %><br>
 			<%= f.label :last_name %>:
-			<%= f.text_field :last_name %><br />
+			<%= f.text_field :last_name %><br>
 			<%= f.label :address1  %>:
 			<%= f.text_field :address1 %><br>
 			<%= f.label :address2%>:

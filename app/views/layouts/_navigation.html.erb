@@ -10,7 +10,7 @@
       </button>
       <% #request.path gets our current url path %>
       <% if request.path != root_path %>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Wine Blog', root_path, class: 'navbar-brand' %>
       <% end %>
       <% if session[:user_id] %>
       <%= link_to 'Profile', home_path, class: 'navbar-brand'  %>
